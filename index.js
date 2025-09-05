@@ -39,7 +39,7 @@ function generatePalette(rand, count = 5, darkmode = false) {
 	* @param {boolean} [darkMode=false] - is in dark mode?
 	* @param {number} [cellSize=20] - size of the individual cell inside the canvas
 	*
-	* @returns {Buffer} - SVG code of the icon 
+	* @returns {string} - SVG code of the icon 
 	*
 	*/
 function icon(seed, size,  darkMode = false, cellSize = 20) {
@@ -86,9 +86,23 @@ function icon(seed, size,  darkMode = false, cellSize = 20) {
     </svg>
     `;
 
-    return Buffer.from(svg);
+    return svg;
+}
+
+/**
+	* @param {string} seed 
+	* @param {int} size - size of the result
+	* @param {boolean} [darkMode=false] - is in dark mode?
+	* @param {number} [cellSize=20] - size of the individual cell inside the canvas
+	*
+	* @returns {string} - base64 encode of the icon 
+	*
+	*/
+function iconB64(seed, size,  darkMode = false, cellSize = 20) {
+	return btoa(encodeURIComponent(icon(seed, size, darkMode, cellSize).toString("base64")))
 }
 
 module.exports = {
-	icon
+	icon,
+	iconB64
 }
