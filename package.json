@@ -1,0 +1,17 @@
+{
+  "name": "profile-icon",
+  "version": "1.0.0",
+  "description": "Generate Profile Icons",
+  "keywords": [
+    "icon",
+    "profile",
+    "generate"
+  ],
+  "license": "GPL-3.0",
+  "author": "mpps",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
